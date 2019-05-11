@@ -23,7 +23,7 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
       scores[activePlayer];
     if (scores[activePlayer] >= 20) {
       document.querySelector("#name-" + activePlayer).textContent =
-        "Победитель!";
+        "Победитель!!!";
       document.querySelector(".dice").style.display = "none";
       document
         .querySelector(".player-" + activePlayer + "-panel")
