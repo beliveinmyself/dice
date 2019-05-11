@@ -1,4 +1,4 @@
-let scores, roundScore, activePlayer, gamePlaying;
+let scores, roundScore, activePlayer, gamePlaying, points = 20;
 init();
 
 document.querySelector(".btn-roll").addEventListener("click", function() {
@@ -21,7 +21,7 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
     scores[activePlayer] += roundScore;
     document.querySelector("#score-" + activePlayer).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= points) {
       document.querySelector("#name-" + activePlayer).textContent =
         "Победитель!!!";
       document.querySelector(".dice").style.display = "none";
@@ -37,7 +37,12 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
     }
   }
 });
+const button = document.getElementById("points");
+button.addEventListener("click" , function (){
+points = document.getElementById("input_points").value
+console.log(points);
 
+})
 function nextPlayer() {
   activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
   roundScore = 0;
